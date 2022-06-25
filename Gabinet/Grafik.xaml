@@ -1,0 +1,23 @@
+﻿<Window x:Class="Gabinet.Grafik"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gabinet"
+        mc:Ignorable="d"
+        Title="Grafik" Height="598" Width="649">
+    <Grid>
+        <TextBlock x:Name="LogOut1" HorizontalAlignment="Left" Height="29" Margin="562,21,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="LogOut_MouseLeftButtonDown" />
+        <TextBlock x:Name="GoBack1" HorizontalAlignment="Left" Height="29" Margin="560,541,0,0" Text="Go Back" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="GoBack1_MouseLeftButtonDown" />
+        <TextBlock x:Name="AddVisit" HorizontalAlignment="Left" Height="40" Margin="38,100,0,0" Text="Select Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
+        <TextBlock x:Name="DataT1" HorizontalAlignment="Left" Height="40" Margin="65,202,0,0" Text="Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
+        <TextBlock x:Name="PatientT" HorizontalAlignment="Left" Height="40" Margin="65,258,0,0" Text="Patient" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
+        <TextBlock x:Name="DoctorT" HorizontalAlignment="Left" Height="40" Margin="64,328,0,0" Text="Doctor" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
+        <TextBlock x:Name="RoomT" HorizontalAlignment="Left" Height="40" Margin="66,396,0,0" Text="Room" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
+        <Button x:Name="AddVisit1" Content="Submit" HorizontalAlignment="Left" Height="38" Margin="461,475,0,0" VerticalAlignment="Top" Width="123" Click="Button_Click" />
+        <ComboBox x:Name="ComboBoxPatient" HorizontalAlignment="Left" Height="30" Margin="254,260,0,0" VerticalAlignment="Top" Width="186" SelectedValue="{Binding ProjektZaliczeniowy.Patient.Id}" DisplayMemberPath="Name" SelectedValuePath="Id" />
+        <ComboBox x:Name="ComboBoxDoctor" HorizontalAlignment="Left" Height="30" Margin="257,326,0,0" VerticalAlignment="Top" Width="186" SelectedValue="{Binding ProjektZaliczeniowy.Doctor.Id}" DisplayMemberPath="NameSurname" SelectedValuePath="Id" />
+        <ComboBox x:Name="ComboBoxRoom" HorizontalAlignment="Left" Height="30" Margin="255,394,0,0" VerticalAlignment="Top" Width="186"  SelectedValue="{Binding ProjektZaliczeniowy.Room.Id}" DisplayMemberPath="Number" SelectedValuePath="Id" />
+        <DatePicker x:Name="DataInput" HorizontalAlignment="Left" Height="36" Margin="264,198,0,0" VerticalAlignment="Top" Width="172" />
+    </Grid>
+</Window>

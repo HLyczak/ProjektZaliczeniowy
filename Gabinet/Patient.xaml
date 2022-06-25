@@ -1,0 +1,26 @@
+﻿<Window x:Class="Gabinet.Patient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gabinet"
+        mc:Ignorable="d"
+        Title="Patient" Height="598" Width="649">
+    <Grid>
+        <TextBlock x:Name="LogOutP" HorizontalAlignment="Left" Height="29" Margin="562,21,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="LogOutP_MouseLeftButtonDown" />
+        <TextBlock x:Name="DataTime_format" HorizontalAlignment="Left" Height="40" Margin="20,65,0,0" Text="Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
+        <TextBox x:Name="Date" HorizontalAlignment="Left" Height="41" Margin="135,63,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" />
+        <Button x:Name="Show_grafik" Content="Show Schedule" HorizontalAlignment="Left" Height="38" Margin="15,169,0,0" VerticalAlignment="Top" Width="163" Click="Show_grafik_Click" />
+        <DataGrid x:Name="datagrid" CanUserAddRows="False" HorizontalAlignment="Left" Height="164" Margin="23,281,0,0" VerticalAlignment="Top" Width="585" HorizontalGridLinesBrush="#FFD13F3F" BorderBrush="#FFFAFDFF" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnView" Content="Delete" Click="btnView_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

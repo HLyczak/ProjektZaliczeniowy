@@ -1,0 +1,16 @@
+﻿<Window x:Class="Gabinet.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gabinet"
+        mc:Ignorable="d"
+        Title="Admin"  Height="598" Width="649">
+    <Grid>
+        <TextBox x:Name="CreateA" HorizontalAlignment="Left" Height="32" Margin="66,146,0,0" Text="Create Account" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextAlignment="Center" />
+        <TextBlock x:Name="LogOut" HorizontalAlignment="Left" Height="29" Margin="562,21,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" />
+        <TextBox x:Name="Visit" HorizontalAlignment="Left" Height="32" Margin="66,326,0,0" Text="Visit" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextAlignment="Center" />
+        <TextBox x:Name="ShowGrafik" HorizontalAlignment="Left" Height="32" Margin="66,407,0,0" Text="Graphic Show" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextAlignment="Center" />
+        <TextBox x:Name="EditProfile" HorizontalAlignment="Left" Height="32" Margin="66,237,0,0" Text="Profile" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextAlignment="Center" />
+    </Grid>
+</Window>

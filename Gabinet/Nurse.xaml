@@ -1,0 +1,30 @@
+﻿<Window x:Class="Gabinet.Nurse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gabinet"
+        mc:Ignorable="d"
+        Title="Nurse"  Height="598" Width="649">
+    <Grid>
+        <TextBlock x:Name="LogOut" HorizontalAlignment="Left" Height="29" Margin="705,10,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" />
+        <TextBlock x:Name="LogOut_Copy" HorizontalAlignment="Left" Height="29" Margin="562,21,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="LogOut_MouseLeftButtonDown" />
+        <Button x:Name="CreateAcoountButton" Content="Create Account" HorizontalAlignment="Left" Height="40" Margin="36,67,0,0" VerticalAlignment="Top" Width="151" Click="CreateAcoountButton_Click" />
+        <TextBlock x:Name="DataTime_format" HorizontalAlignment="Left" Height="40" Margin="36,174,0,0" Text="Select data" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
+        <TextBox x:Name="dataNurse" HorizontalAlignment="Left" Height="41" Margin="220,169,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" />
+        <TextBlock x:Name="DataTime_format_Copy" HorizontalAlignment="Left" Height="40" Margin="37,137,0,0" Text="Schedule section" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
+        <DataGrid x:Name="datagrid" CanUserAddRows="False" HorizontalAlignment="Left" Height="164" Margin="26,247,0,0" VerticalAlignment="Top" Width="585" HorizontalGridLinesBrush="#FFD13F3F" BorderBrush="#FFFAFDFF" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnView" Content="Delete" Click="btnView_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="show" Content="Show Schedule" HorizontalAlignment="Left" Height="38" Margin="424,169,0,0" VerticalAlignment="Top" Width="163" Click="show_Click" />
+        <Button x:Name="AddVisit" Content="Add Visit" HorizontalAlignment="Left" Height="40" Margin="222,66,0,0" VerticalAlignment="Top" Width="151" Click="AddVisit_Click" />
+    </Grid>
+</Window>
