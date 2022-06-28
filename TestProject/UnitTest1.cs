@@ -4,6 +4,9 @@ using System;
 
 namespace TestProject
 {
+    /// <summary>
+    ///Test jednostkowy dla wybranych metod
+    /// </summary>
     public class Tests
     {
         [SetUp]
@@ -11,6 +14,9 @@ namespace TestProject
         {
         }
 
+        /// <summary>
+        /// Test jednostkowy dla pola dotycz¹cego d³ugoœci stringa odpowiadaj¹cego za surname oraz komunikat przechwytywanego wyj¹tku.
+        /// </summary>
         [Test]
         public void Test1Doctor()
         {
@@ -20,6 +26,10 @@ namespace TestProject
             () => new Doctor { Id = 2, NameSurname = " ", Adress = " Zielona 5", PermissionNumber = " 560053", RoleId = 3, SpecializationId = 2 });
             Assert.AreEqual("B³êdne dane", exception.Message);
         }
+
+        /// <summary>
+        /// Test jednostkowy dla pola dotycz¹cego d³ugoœci wartosci wprowadzonej w polu pesel.
+        /// </summary>
 
         [Test]
         public void Test2Patient()

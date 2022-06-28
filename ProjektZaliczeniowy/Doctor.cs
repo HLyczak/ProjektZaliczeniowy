@@ -43,5 +43,6 @@ namespace ProjektZaliczeniowy
         public Specialization Specialization { get; set; }
 
         public ICollection<Grafik> Grafik { get; set; }
+        public string Password { get; set; }
     }
 }

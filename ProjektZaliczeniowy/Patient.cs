@@ -40,6 +40,8 @@ namespace ProjektZaliczeniowy
 
         public Role Role { get; set; }
 
+        public string Password { get; set; }
+
         public ICollection<Grafik> Grafik { get; set; }
     }
 }

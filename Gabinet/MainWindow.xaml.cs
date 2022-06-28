@@ -36,11 +36,13 @@ namespace Gabinet
         private void submitLogin_Click(object sender, RoutedEventArgs e)
         {
             var name = this.LogIn.Text;
+            var pass = this.Password.Password;
 
             if (DoctorT.IsChecked == true)
             {
                 var nameSql = this.Context.Doctor.FirstOrDefault(u => u.NameSurname == name);
-                if (nameSql is not null)
+                var passSql = this.Context.Doctor.FirstOrDefault(u => u.Password == pass);
+                if (nameSql is not null && passSql is not null)
                 {
                     Gabinet.Doctor doctor = new Gabinet.Doctor(this.Context, nameSql);
                     this.Visibility = Visibility.Hidden;
@@ -55,7 +57,8 @@ namespace Gabinet
             if (Patient.IsChecked == true)
             {
                 var nameSql = this.Context.Patient.FirstOrDefault(u => u.Name == name);
-                if (nameSql is not null)
+                var passSql = this.Context.Patient.FirstOrDefault(u => u.Password == pass);
+                if (nameSql is not null && passSql is not null)
                 {
                     Gabinet.Patient pacjent = new Gabinet.Patient(this.Context, nameSql);
                     this.Visibility = Visibility.Hidden;
@@ -70,7 +73,8 @@ namespace Gabinet
             if (Nurse.IsChecked == true)
             {
                 var nameSql = this.Context.Nurse.FirstOrDefault(u => u.NameSurname == name);
-                if (nameSql is not null)
+                var passSql = this.Context.Nurse.FirstOrDefault(u => u.Password == pass);
+                if (nameSql is not null && passSql is not null)
                 {
                     Gabinet.Nurse nurse = new Gabinet.Nurse(this.Context);
                     this.Visibility = Visibility.Hidden;
@@ -86,6 +90,10 @@ namespace Gabinet
         public bool textInput(GabinetContext contex)
         {
             return true;
+        }
+
+        private void LogIn_TextChanged(object sender, TextChangedEventArgs e)
+        {
         }
     }
 }

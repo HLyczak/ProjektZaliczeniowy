@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="Doctor"  Height="598" Width="649">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/image.png" />
+        </Grid.Background>
         <TextBlock x:Name="LogOut" HorizontalAlignment="Left" Height="29" Margin="562,21,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="LogOut_MouseLeftButtonDown_1" />
-        <Button x:Name="Show_grafik" Content="Show Schedule" HorizontalAlignment="Left" Height="38" Margin="22,75,0,0" VerticalAlignment="Top" Width="163" Click="Show_grafik_Click" />
-        <TextBox x:Name="Date" HorizontalAlignment="Left" Height="41" Margin="162,21,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" />
-        <TextBlock x:Name="DataTime_format" HorizontalAlignment="Left" Height="40" Margin="30,29,0,0" Text="Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
-        <DataGrid x:Name="datagrid" CanUserAddRows="False" HorizontalAlignment="Left" Height="164" Margin="25,143,0,0" VerticalAlignment="Top" Width="585" HorizontalGridLinesBrush="#FFD13F3F" BorderBrush="#FFFAFDFF" Background="{x:Null}">
+        <Button x:Name="Show_grafik" Content="Show Schedule" HorizontalAlignment="Left" Height="38" Margin="22,75,0,0" VerticalAlignment="Top" Width="163" Click="Show_grafik_Click" Background="{x:Null}" BorderBrush="#FF7BA69C" FontFamily="Lucida Sans" />
+        <TextBox x:Name="Date" HorizontalAlignment="Left" Height="25" Margin="96,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="{x:Null}" BorderBrush="#FF7BA69C" TextAlignment="Center" />
+        <TextBlock x:Name="DataTime_format" HorizontalAlignment="Left" Height="40" Margin="30,29,0,0" Text="Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontFamily="Lucida Sans" />
+        <DataGrid x:Name="datagrid" CanUserAddRows="False" HorizontalAlignment="Left" Height="164" Margin="25,143,0,0" VerticalAlignment="Top" Width="585" HorizontalGridLinesBrush="#FFD13F3F" BorderBrush="{x:Null}" Background="{x:Null}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>

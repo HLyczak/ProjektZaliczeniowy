@@ -7,33 +7,40 @@
         mc:Ignorable="d"
         Title="CreateAcoount"  Height="598" Width="649">
     <Grid>
-        <TextBox x:Name="NameSurname" HorizontalAlignment="Left" Height="32" Margin="324,145,0,0" Text="Name &amp; Surname" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextAlignment="Center" />
-        <TextBlock x:Name="AcoountType" HorizontalAlignment="Left" Height="34" Margin="55,25,0,0" Text="Choose Type" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" />
-        <RadioButton x:Name="DoctorT" Content="Doctor" HorizontalAlignment="Left" Height="27" Margin="55,66,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.682,0.618" Click="DoctorT_Click" />
-        <RadioButton x:Name="NurseT" Content="Nurse&#xD;&#xA;" HorizontalAlignment="Left" Height="27" Margin="161,66,0,0" VerticalAlignment="Top" Width="99" Click="NurseT_Click" />
-        <TextBlock x:Name="NameSurnameText" HorizontalAlignment="Left" Height="34" Margin="91,143,0,0" Text="Name &amp; Surname" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" />
-        <TextBox x:Name="Adress" HorizontalAlignment="Left" Height="32" Margin="324,205,0,0" Text="Adress" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextAlignment="Center" />
-        <TextBox x:Name="PermissionNumber" HorizontalAlignment="Left" Height="32" Margin="324,319,0,0" Text="Permission Number" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextAlignment="Center" />
-        <Button Content="Submit" HorizontalAlignment="Left" Height="38" Margin="65,464,0,0" VerticalAlignment="Top" Width="192" Click="Button_Click_1" />
-        <TextBlock x:Name="RoleText" HorizontalAlignment="Left" Height="34" Margin="91,260,0,0" Text="Role" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" />
-        <ComboBox x:Name="RoleComboBox" HorizontalAlignment="Left" Height="34" Margin="340,257,0,0" VerticalAlignment="Top" Width="159" SelectedValuePath="Tag">
+        <Grid.Background>
+            <ImageBrush ImageSource="/image.png" />
+        </Grid.Background>
+        <TextBox x:Name="NameSurname" HorizontalAlignment="Left" Height="25" Margin="53,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" TextAlignment="Center" Background="{x:Null}" BorderBrush="#FF7BA69C" />
+        <TextBlock x:Name="AcoountType" HorizontalAlignment="Left" Height="34" Margin="51,16,0,0" Text="Choose Type" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontFamily="Lucida Sans" FontSize="15" />
+        <RadioButton x:Name="DoctorT" Content="Doctor" HorizontalAlignment="Left" Height="27" Margin="56,54,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.682,0.618" Click="DoctorT_Click" FontFamily="Lucida Sans" />
+        <RadioButton x:Name="NurseT" Content="Nurse&#xD;&#xA;" HorizontalAlignment="Left" Height="27" Margin="132,54,0,0" VerticalAlignment="Top" Width="99" Click="NurseT_Click" FontFamily="Lucida Sans" RenderTransformOrigin="0.455,0.779" />
+        <TextBlock x:Name="NameSurnameText" HorizontalAlignment="Left" Height="34" Margin="55,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="10" FontFamily="Lucida Sans" ><Run Text="Name " /><Run Text="and" /><Run Text=" Surname" /><Run Language="pl-pl" Text=":" /><LineBreak /><Run Language="pl-pl" /></TextBlock>
+        <TextBox x:Name="Adress" HorizontalAlignment="Left" Height="25" Margin="56,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" TextAlignment="Center" Background="{x:Null}" BorderBrush="#FF7BA69C" />
+        <TextBox x:Name="PermissionNumber" HorizontalAlignment="Left" Height="25" Margin="54,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" TextAlignment="Center" Background="{x:Null}" BorderBrush="#FF7BA69C" />
+        <Button Content="Log In" HorizontalAlignment="Left" Height="38" Margin="65,464,0,0" VerticalAlignment="Top" Width="192" Click="Button_Click_1" BorderBrush="#FF7BA69C" Background="{x:Null}" />
+        <TextBlock x:Name="RoleText" HorizontalAlignment="Left" Height="34" Margin="56,200,0,0" Text="Role:" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontFamily="Lucida Sans" FontSize="10" />
+        <ComboBox x:Name="RoleComboBox" HorizontalAlignment="Left" Height="25" Margin="92,194,0,0" VerticalAlignment="Top" Width="162" SelectedValuePath="Tag" BorderBrush="#FF7BA69C" Background="{x:Null}">
             <ComboBoxItem Content="Admin" Tag="1" />
             <ComboBoxItem Content="Writer" Tag="3" />
             <ComboBoxItem Content="Reader" Tag="2" />
         </ComboBox>
-        <TextBlock x:Name="PermissionNumberT" HorizontalAlignment="Left" Height="34" Margin="91,319,0,0" Text="Permission Number" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" />
-        <TextBlock x:Name="SpecjalizationText" HorizontalAlignment="Left" Height="34" Margin="91,374,0,0" Text="Specjalization" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" />
-        <ComboBox x:Name="SpecjalizationDropDown" HorizontalAlignment="Left" Height="34" Margin="340,370,0,0" VerticalAlignment="Top" Width="159" Text="SpecjalizationDropDown" SelectedValuePath="Tag">
+        <TextBlock x:Name="PermissionNumberT" HorizontalAlignment="Left" Height="34" Margin="56,231,0,0" Text="Permission Number:" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="10" FontFamily="Lucida Sans" />
+        <TextBlock x:Name="SpecjalizationText" HorizontalAlignment="Left" Height="34" Margin="58,279,0,0" Text="Specjalization: " TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontFamily="Lucida Sans" FontSize="10" />
+        <ComboBox x:Name="SpecjalizationDropDown" HorizontalAlignment="Left" Height="25" Margin="58,291,0,0" VerticalAlignment="Top" Width="200" Text="SpecjalizationDropDown" SelectedValuePath="Tag" BorderBrush="#FF7BA69C" Background="{x:Null}">
             <ComboBoxItem Content="Lekarz Rodzinny" Tag="1" />
             <ComboBoxItem Content="Endokrynolog" Tag="2" />
             <ComboBoxItem Content="Laryngolog" Tag="3" />
             <ComboBoxItem Content="Stomatolog" Tag="4" />
         </ComboBox>
-        <RadioButton x:Name="PatientT" Content="Patient&#xA;" HorizontalAlignment="Left" Height="27" Margin="246,64,0,0" VerticalAlignment="Top" Width="99" Click="PatientT_Click" />
-        <TextBlock x:Name="GoBack" HorizontalAlignment="Left" Height="29" Margin="560,541,0,0" Text="Go Back" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="GoBack_MouseLeftButtonDown" />
-        <TextBlock x:Name="NameSurnameText_Copy" HorizontalAlignment="Left" Height="34" Margin="92,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" ><Run Language="pl-pl" Text="Adress" /></TextBlock>
-        <TextBlock x:Name="PeselT" HorizontalAlignment="Left" Height="34" Margin="91,413,0,0" Text="Pesel" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" />
-        <TextBox x:Name="Pesel" HorizontalAlignment="Left" Height="32" Margin="314,412,0,0" Text="Pesel" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextAlignment="Center" />
-        <TextBlock x:Name="LogOutt" HorizontalAlignment="Left" Height="29" Margin="562,21,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="LogOutt_MouseLeftButtonDown" />
+        <RadioButton x:Name="PatientT" Content="Patient&#xA;" HorizontalAlignment="Left" Height="27" Margin="199,55,0,0" VerticalAlignment="Top" Width="99" Click="PatientT_Click" FontFamily="Lucida Sans" />
+        <TextBlock x:Name="GoBack" HorizontalAlignment="Left" Height="29" Margin="580,541,0,0" Text="Go Back" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="GoBack_MouseLeftButtonDown" />
+        <TextBlock x:Name="NameSurnameText_Copy" HorizontalAlignment="Left" Height="34" Margin="56,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontFamily="Lucida Sans" FontSize="10" ><Run Text="Adress" /><Run Language="pl-pl" Text=":" /><LineBreak /><Run Language="pl-pl" /></TextBlock>
+        <TextBlock x:Name="PeselT" HorizontalAlignment="Left" Height="25" Margin="60,325,0,0" Text="Pesel:" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Lucida Sans" FontSize="10" />
+        <TextBox x:Name="Pesel" HorizontalAlignment="Left" Height="25" Margin="59,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" TextAlignment="Center" Background="{x:Null}" />
+        <TextBlock x:Name="LogOutt" HorizontalAlignment="Left" Height="29" Margin="562,21,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="LogOutt_MouseLeftButtonDown">
+            <TextBlock.Background>
+                <ImageBrush />
+            </TextBlock.Background>
+        </TextBlock>
     </Grid>
 </Window>

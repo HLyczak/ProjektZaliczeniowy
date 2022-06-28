@@ -36,7 +36,7 @@ namespace Gabinet
         }
 
         /// <summary>
-        /// Metoda odpowiadająca za pokazanie grafiku wizyt dla zalogowanego pacjenta
+        /// Metoda odpowiadająca za pokazanie grafiku wizyt dla zalogowanego pacjenta.
         /// </summary>
         private void show_Click(object sender, RoutedEventArgs e)
         {
@@ -46,6 +46,9 @@ namespace Gabinet
             datagrid.ItemsSource = patientid;
         }
 
+        /// <summary>
+        /// Metoda odpowiadająca za usunięcie wizyty z grafiku oraz za odświeżenie listy.
+        /// </summary>
         public void btnView_Click(object sender, RoutedEventArgs e)
         {
             var message = MessageBox.Show("Are you sure?", "Caution", MessageBoxButton.OK, MessageBoxImage.Warning);
