@@ -15,7 +15,20 @@ namespace ProjektZaliczeniowy
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
-        public string NameSurname { get; set; }
+        private string _nameSurname;
+
+        public string NameSurname
+        {
+            get => _nameSurname;
+
+            set
+            {
+                if (value.Length < 3)
+                    throw new ArgumentException("Błędne dane");
+                _nameSurname = value;
+            }
+        }
+
         public string Adress { get; set; }
         public string PermissionNumber { get; set; }
 

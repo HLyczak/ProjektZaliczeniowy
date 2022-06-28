@@ -37,14 +37,21 @@ namespace Gabinet
             main.Show();
         }
 
+        /// <summary>
+        ///Dodanie wyświetlania listy wizyt dla jednego usera.
+        /// </summary>
+
         private void Show_grafik_Click(object sender, RoutedEventArgs e)
         {
             var data = this.Date.Text;
-            var datasq = this.Context.Grafik.Where(u => u.Data.ToString().Contains(data) && u.DoctorId == CurrentDoctor.Id); ;
+            var datasq = this.Context.Grafik.Where(u => u.Data.ToString().Contains(data) && u.DoctorId == CurrentDoctor.Id);
             var patientid = datasq.Select(u => new RowGrafik { Doctor_Name = u.Doctor.NameSurname, Room_Number = u.Room.Number, Grafik_Id = u.Id, Name_Patient = u.Patient.Name }).ToList();
             datagrid.ItemsSource = patientid;
         }
 
+        /// <summary>
+        ///Funkcja odpowiadająca za usuwanie usera z bazy oraz refresh listy.
+        /// </summary>
         public void btnView_Click(object sender, RoutedEventArgs e)
         {
             var message = MessageBox.Show("Are you sure?", "Caution", MessageBoxButton.OK, MessageBoxImage.Warning);

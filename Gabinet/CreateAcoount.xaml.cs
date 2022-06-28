@@ -28,6 +28,9 @@ namespace Gabinet
             this.Context = context;
         }
 
+        /// <summary>
+        /// Ustawienie widoczności elementów dla doktora
+        /// </summary>
         private void DoctorT_Click(object sender, RoutedEventArgs e)
         {
             this.SpecjalizationText.Visibility = Visibility.Visible;
@@ -37,6 +40,10 @@ namespace Gabinet
             this.RoleText.Visibility = Visibility.Visible;
             this.RoleComboBox.Visibility = Visibility.Visible;
         }
+
+        /// <summary>
+        /// Ustawienie widoczności elementów dla pielęgniarki
+        /// </summary>
 
         private void NurseT_Click(object sender, RoutedEventArgs e)
         {
@@ -50,6 +57,9 @@ namespace Gabinet
             this.RoleComboBox.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Ustawienie widoczności elementów dla pacjenta
+        /// </summary>
         private void PatientT_Click(object sender, RoutedEventArgs e)
         {
             this.SpecjalizationText.Visibility = Visibility.Hidden;
@@ -62,39 +72,62 @@ namespace Gabinet
             this.RoleComboBox.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Metoda odpowiada za dodawanie użytkowników do bazy danych.
+        /// </summary>
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string addName = this.NameSurname.Text;
             string addAdres = this.Adress.Text;
 
-            if (DoctorT.IsChecked == true)
+            try
             {
-                var addRole = RoleComboBox.SelectedValue.ToString();
-                long addRole2 = long.Parse(addRole);
-                var addSpecjalization = this.SpecjalizationDropDown.SelectedValue.ToString();
-                long addSpecjalization2 = long.Parse(addSpecjalization);
-                string addPermission = this.PermissionNumber.Text;
-                this.Context.Add(new ProjektZaliczeniowy.Doctor { NameSurname = addName, Adress = addAdres, PermissionNumber = addPermission, RoleId = addRole2, SpecializationId = addSpecjalization2 });
-            }
+                /// <summary>
+                /// Dodanie usera - doctor do bazy danych
+                /// </summary>
+                ///
+                if (DoctorT.IsChecked == true)
+                {
+                    var addRole = RoleComboBox.SelectedValue.ToString();
+                    long addRole2 = long.Parse(addRole);
+                    var addSpecjalization = this.SpecjalizationDropDown.SelectedValue.ToString();
+                    long addSpecjalization2 = long.Parse(addSpecjalization);
+                    string addPermission = this.PermissionNumber.Text;
+                    this.Context.Add(new ProjektZaliczeniowy.Doctor { NameSurname = addName, Adress = addAdres, PermissionNumber = addPermission, RoleId = addRole2, SpecializationId = addSpecjalization2 });
+                }
+                /// <summary>
+                /// Dodanie usera -patient do bazy danych
+                /// </summary>
+                if (PatientT.IsChecked == true)
+                {
+                    string addPesel = this.Pesel.Text;
+                    long addPesel2 = long.Parse(addPesel);
+                    this.Context.Add(new ProjektZaliczeniowy.Patient { Name = addName, Adress = addAdres, Pesel = addPesel2, RoleId = 2 });
+                }
+                /// <summary>
+                /// Dodanie usera -nurse do bazy danych
+                /// </summary>
+                if (NurseT.IsChecked == true)
+                {
+                    var addRole = RoleComboBox.SelectedValue.ToString();
+                    long addRole2 = long.Parse(addRole);
+                    string addPermission = this.PermissionNumber.Text;
+                    this.Context.Add(new ProjektZaliczeniowy.Nurse { NameSurname = addName, Adress = addAdres, PermissionNumber = addPermission, RoleId = addRole2 });
+                }
 
-            if (PatientT.IsChecked == true)
-            {
-                string addPesel = this.Pesel.Text;
-                long addPesel2 = long.Parse(addPesel);
-                this.Context.Add(new ProjektZaliczeniowy.Patient { Name = addName, Adress = addAdres, Pesel = addPesel2, RoleId = 2 });
+                Context.SaveChanges();
+                MessageBox.Show("The user has been created");
             }
-            if (NurseT.IsChecked == true)
+            catch (ArgumentException)
             {
-                var addRole = RoleComboBox.SelectedValue.ToString();
-                long addRole2 = long.Parse(addRole);
-                string addPermission = this.PermissionNumber.Text;
-                this.Context.Add(new ProjektZaliczeniowy.Nurse { NameSurname = addName, Adress = addAdres, PermissionNumber = addPermission, RoleId = addRole2 });
+                MessageBox.Show("Invalid data");
             }
-
-            Context.SaveChanges();
-            MessageBox.Show("The user has been created");
         }
 
+        /// <summary>
+        ///Dodanie akcji do przycisku go back.
+        /// </summary>
         private void GoBack_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Gabinet.Nurse nurse = new Gabinet.Nurse(this.Context);
@@ -102,6 +135,9 @@ namespace Gabinet
             nurse.Show();
         }
 
+        /// <summary>
+        ///Dodanie akcji do przycisku logout.
+        /// </summary>
         private void LogOutt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Gabinet.MainWindow main = new Gabinet.MainWindow(this.Context);

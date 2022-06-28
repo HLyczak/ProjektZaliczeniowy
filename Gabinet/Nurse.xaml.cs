@@ -35,6 +35,9 @@ namespace Gabinet
             main.Show();
         }
 
+        /// <summary>
+        /// Metoda odpowiadająca za pokazanie grafiku wizyt dla zalogowanego pacjenta
+        /// </summary>
         private void show_Click(object sender, RoutedEventArgs e)
         {
             var data = this.dataNurse.Text;

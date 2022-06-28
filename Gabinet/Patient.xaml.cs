@@ -38,6 +38,9 @@ namespace Gabinet
             datagrid.ItemsSource = patientid;
         }
 
+        /// <summary>
+        /// Metoda odpowiadająca za usunięcie wizyty z grafiku oraz za odświeżenie listy.
+        /// </summary>
         public void btnView_Click(object sender, RoutedEventArgs e)
         {
             var message = MessageBox.Show("Are you sure?", "Caution", MessageBoxButton.OK, MessageBoxImage.Warning);

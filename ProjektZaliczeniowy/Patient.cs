@@ -14,8 +14,25 @@ namespace ProjektZaliczeniowy
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
+        public long _pesel;
+
         public string Name { get; set; }
-        public long Pesel { get; set; }
+
+        public long Pesel
+        {
+            get => _pesel;
+
+            set
+            {
+                if (value < 11)
+                {
+                    throw new ArgumentException("Błędne dane");
+                }
+
+                _pesel = value;
+            }
+        }
+
         public string Adress { get; set; }
 
         [ForeignKey("Role")]
