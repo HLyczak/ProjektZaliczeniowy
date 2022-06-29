@@ -28,6 +28,10 @@ namespace Gabinet
             InitializeComponent();
             this.Context = context;
             this.CurrentDoctor = doctor;
+
+            var doctorVisits = this.Context.Grafik.Where(u => u.DoctorId == CurrentDoctor.Id);
+            var dateList = doctorVisits.Select(v => v.Data.ToString("yyyy-MM-dd")).Distinct().ToList();
+            dropdownData.ItemsSource = dateList;
         }
 
         private void LogOut_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
@@ -43,9 +47,15 @@ namespace Gabinet
 
         private void Show_grafik_Click(object sender, RoutedEventArgs e)
         {
-            var data = this.Date.Text;
+            var data = this.dropdownData.Text;
             var datasq = this.Context.Grafik.Where(u => u.Data.ToString().Contains(data) && u.DoctorId == CurrentDoctor.Id);
-            var patientid = datasq.Select(u => new RowGrafik { Doctor_Name = u.Doctor.NameSurname, Room_Number = u.Room.Number, Grafik_Id = u.Id, Name_Patient = u.Patient.Name }).ToList();
+            var patientid = datasq.Select(u => new RowGrafik
+            {
+                Doctor_Name = u.Doctor.NameSurname,
+                Room_Number = u.Room.Number,
+                Grafik_Id = u.Id,
+                Name_Patient = u.Patient.Name
+            }).ToList();
             datagrid.ItemsSource = patientid;
         }
 
@@ -60,7 +70,7 @@ namespace Gabinet
             this.Context.Grafik.Remove(delete);
             Context.SaveChanges();
 
-            var data = this.Date.Text;
+            var data = this.dropdownData.Text;
             var datasq = this.Context.Grafik.Where(u => u.Data.ToString().Contains(data));
             var patientid = datasq.Select(u => new RowGrafik { Doctor_Name = u.Doctor.NameSurname, Room_Number = u.Room.Number, Grafik_Id = u.Id, Name_Patient = u.Patient.Name }).ToList();
             datagrid.ItemsSource = patientid;

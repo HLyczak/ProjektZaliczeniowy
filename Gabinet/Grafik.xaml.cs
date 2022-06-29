@@ -44,8 +44,13 @@ namespace Gabinet
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var data = DataInput.SelectedDate.Value.Date;
+            if (!DataInput.SelectedDate.HasValue)
+            {
+                MessageBox.Show("No data", "Caution", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
 
+            var data = DataInput.SelectedDate.Value.Date;
             string addDoctor = ComboBoxDoctor.SelectedValue.ToString();
             long addDoctor1 = long.Parse(addDoctor);
             string addPatient = ComboBoxPatient.SelectedValue.ToString();

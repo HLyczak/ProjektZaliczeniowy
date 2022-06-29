@@ -12,11 +12,9 @@
         </Grid.Background>
         <TextBlock x:Name="LogOut" HorizontalAlignment="Left" Height="29" Margin="705,10,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" />
         <TextBlock x:Name="LogOut_Copy" HorizontalAlignment="Left" Height="29" Margin="572,7,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="LogOut_MouseLeftButtonDown" FontFamily="Lucida Sans" />
-        <Button x:Name="CreateAcoountButton" Content="Create Account" HorizontalAlignment="Left" Height="40" Margin="36,67,0,0" VerticalAlignment="Top" Width="151" Click="CreateAcoountButton_Click" Background="{x:Null}" BorderBrush="#FF7BA69C" FontFamily="Lucida Sans" />
-        <TextBlock x:Name="DataTime_format" HorizontalAlignment="Left" Height="40" Margin="38,184,0,0" Text="Select data:" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontFamily="Lucida Sans" />
-        <TextBox x:Name="dataNurse" HorizontalAlignment="Left" Height="25" Margin="115,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Background="{x:Null}" BorderBrush="#FF7BA69C" />
-        <TextBlock x:Name="DataTime_format_Copy" HorizontalAlignment="Left" Height="40" Margin="35,143,0,0" Text="Schedule section" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontFamily="Lucida Sans" FontSize="15" />
-        <DataGrid x:Name="datagrid" CanUserAddRows="False" HorizontalAlignment="Left" Height="269" Margin="21,267,0,0" VerticalAlignment="Top" Width="585" HorizontalGridLinesBrush="#FFD13F3F" BorderBrush="#FFFAFDFF" Background="{x:Null}">
+        <Button x:Name="CreateAcoountButton" Content="Create Account" HorizontalAlignment="Left" Height="40" Margin="181,11,0,0" VerticalAlignment="Top" Width="151" Click="CreateAcoountButton_Click" Background="{x:Null}" BorderBrush="#FF7BA69C" FontFamily="Lucida Sans" />
+        <TextBlock x:Name="DataTime_format" HorizontalAlignment="Left" Height="40" Margin="21,88,0,0" Text="Select data:" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" FontFamily="Lucida Sans" />
+        <DataGrid x:Name="datagrid" CanUserAddRows="False" HorizontalAlignment="Left" Height="409" Margin="29,150,0,0" VerticalAlignment="Top" Width="585" HorizontalGridLinesBrush="#FF7BA69C" BorderBrush="#FFFAFDFF" Background="#7CFCF9F9">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
@@ -27,7 +25,9 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="show" Content="Show Schedule" HorizontalAlignment="Left" Height="36" Margin="136,221,0,0" VerticalAlignment="Top" Width="120" Click="show_Click" BorderBrush="#FF7BA69C" Background="{x:Null}" FontFamily="Lucida Sans" />
-        <Button x:Name="AddVisit" Content="Add Visit" HorizontalAlignment="Left" Height="40" Margin="222,66,0,0" VerticalAlignment="Top" Width="151" Click="AddVisit_Click" BorderBrush="#FF7BA69C" Background="{x:Null}" />
+        <Button x:Name="show" Content="Show Schedule" HorizontalAlignment="Left" Height="36" Margin="260,79,0,0" VerticalAlignment="Top" Width="126" Click="show_Click" BorderBrush="#FF7BA69C" Background="{x:Null}" FontFamily="Lucida Sans" />
+        <Button x:Name="AddVisit" Content="Add Visit" HorizontalAlignment="Left" Height="40" Margin="359,11,0,0" VerticalAlignment="Top" Width="151" Click="AddVisit_Click" BorderBrush="#FF7BA69C" Background="{x:Null}" />
+        <DatePicker x:Name="dataNurse1" HorizontalAlignment="Left" Height="28" Margin="112,83,0,0" VerticalAlignment="Top" Width="138" Background="#FFFDFDFD" />
+        <TextBlock x:Name="DataTime_format_Copy1" HorizontalAlignment="Left" Height="40" Margin="14,15,0,0" Text="Nurse`s view" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontFamily="Lucida Sans" FontSize="16" />
     </Grid>
 </Window>

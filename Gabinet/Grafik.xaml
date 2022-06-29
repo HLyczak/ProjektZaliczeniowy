@@ -7,17 +7,28 @@
         mc:Ignorable="d"
         Title="Grafik" Height="598" Width="649">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/image.png" />
+        </Grid.Background>
         <TextBlock x:Name="LogOut1" HorizontalAlignment="Left" Height="29" Margin="562,21,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="LogOut_MouseLeftButtonDown" />
         <TextBlock x:Name="GoBack1" HorizontalAlignment="Left" Height="29" Margin="560,541,0,0" Text="Go Back" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="GoBack1_MouseLeftButtonDown" />
-        <TextBlock x:Name="AddVisit" HorizontalAlignment="Left" Height="40" Margin="38,100,0,0" Text="Select Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
-        <TextBlock x:Name="DataT1" HorizontalAlignment="Left" Height="40" Margin="65,202,0,0" Text="Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
-        <TextBlock x:Name="PatientT" HorizontalAlignment="Left" Height="40" Margin="65,258,0,0" Text="Patient" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
-        <TextBlock x:Name="DoctorT" HorizontalAlignment="Left" Height="40" Margin="64,328,0,0" Text="Doctor" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
-        <TextBlock x:Name="RoomT" HorizontalAlignment="Left" Height="40" Margin="66,396,0,0" Text="Room" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
-        <Button x:Name="AddVisit1" Content="Submit" HorizontalAlignment="Left" Height="38" Margin="461,475,0,0" VerticalAlignment="Top" Width="123" Click="Button_Click" />
-        <ComboBox x:Name="ComboBoxPatient" HorizontalAlignment="Left" Height="30" Margin="254,260,0,0" VerticalAlignment="Top" Width="186" SelectedValue="{Binding ProjektZaliczeniowy.Patient.Id}" DisplayMemberPath="Name" SelectedValuePath="Id" />
-        <ComboBox x:Name="ComboBoxDoctor" HorizontalAlignment="Left" Height="30" Margin="257,326,0,0" VerticalAlignment="Top" Width="186" SelectedValue="{Binding ProjektZaliczeniowy.Doctor.Id}" DisplayMemberPath="NameSurname" SelectedValuePath="Id" />
-        <ComboBox x:Name="ComboBoxRoom" HorizontalAlignment="Left" Height="30" Margin="255,394,0,0" VerticalAlignment="Top" Width="186"  SelectedValue="{Binding ProjektZaliczeniowy.Room.Id}" DisplayMemberPath="Number" SelectedValuePath="Id" />
-        <DatePicker x:Name="DataInput" HorizontalAlignment="Left" Height="36" Margin="264,198,0,0" VerticalAlignment="Top" Width="172" />
+        <TextBlock x:Name="PatientT" HorizontalAlignment="Left" Height="40" Margin="39,155,0,0" Text="Patient" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontFamily="Lucida Sans" />
+        <TextBlock x:Name="DoctorT" HorizontalAlignment="Left" Height="40" Margin="40,204,0,0" Text="Doctor" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontFamily="Lucida Sans" />
+        <TextBlock x:Name="RoomT" HorizontalAlignment="Left" Height="40" Margin="41,255,0,0" Text="Room" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontFamily="Lucida Sans" />
+        <Button x:Name="AddVisit1" Content="Submit" HorizontalAlignment="Left" Height="38" Margin="45,318,0,0" VerticalAlignment="Top" Width="192" Click="Button_Click" Background="{x:Null}" BorderBrush="#FF7BA69C" />
+        <ComboBox x:Name="ComboBoxPatient" HorizontalAlignment="Left" Height="25" Margin="103,148,0,0" VerticalAlignment="Top" Width="162" SelectedValue="{Binding ProjektZaliczeniowy.Patient.Id}" DisplayMemberPath="Name" SelectedValuePath="Id" />
+        <ComboBox x:Name="ComboBoxDoctor" HorizontalAlignment="Left" Height="25" Margin="103,200,0,0" VerticalAlignment="Top" Width="162" SelectedValue="{Binding ProjektZaliczeniowy.Doctor.Id}" DisplayMemberPath="NameSurname" SelectedValuePath="Id" BorderBrush="#FF7BA69C" />
+        <ComboBox x:Name="ComboBoxRoom" HorizontalAlignment="Left" Height="25" Margin="102,254,0,0" VerticalAlignment="Top" Width="162"  SelectedValue="{Binding ProjektZaliczeniowy.Room.Id}" DisplayMemberPath="Number" SelectedValuePath="Id" BorderBrush="#FF7BA69C" />
+        <DatePicker x:Name="DataInput" HorizontalAlignment="Left" Height="25" Margin="31,44,0,0" VerticalAlignment="Top" Width="250" Background="#FFFDFBFB" FontFamily="Lucida Sans" IsTodayHighlighted="True" SelectedDateFormat="Short">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#FFA3AEB9" />
+                    <GradientStop Color="#FF8399A9" Offset="0.375" />
+                    <GradientStop Color="#FF718597" Offset="0.375" />
+                    <GradientStop Color="#FF7BA69C" Offset="1" />
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+        </DatePicker>
+        <TextBlock x:Name="AcoountType_Copy" HorizontalAlignment="Left" Height="34" Margin="21,13,0,0" Text="Create a visit" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" FontFamily="Lucida Sans" FontSize="16" RenderTransformOrigin="-0.601,-0.158" />
     </Grid>
 </Window>

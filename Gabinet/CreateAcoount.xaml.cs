@@ -33,6 +33,14 @@ namespace Gabinet
         /// </summary>
         private void DoctorT_Click(object sender, RoutedEventArgs e)
         {
+            this.SpecjalizationDropDown.SelectedIndex = -1;
+            this.RoleComboBox.SelectedIndex = -1;
+            this.Pesel.Clear();
+            this.NameSurname.Clear();
+            this.PassInput.Clear();
+            this.PermissionNumber.Clear();
+            this.Adress.Clear();
+
             this.SpecjalizationText.Visibility = Visibility.Visible;
             this.SpecjalizationDropDown.Visibility = Visibility.Visible;
             this.PeselT.Visibility = Visibility.Hidden;
@@ -47,6 +55,12 @@ namespace Gabinet
 
         private void NurseT_Click(object sender, RoutedEventArgs e)
         {
+            this.RoleComboBox.SelectedIndex = -1;
+            this.NameSurname.Clear();
+            this.PassInput.Clear();
+            this.PermissionNumber.Clear();
+            this.Adress.Clear();
+
             this.SpecjalizationText.Visibility = Visibility.Hidden;
             this.SpecjalizationDropDown.Visibility = Visibility.Hidden;
             this.PermissionNumberT.Visibility = Visibility.Visible;
@@ -62,6 +76,10 @@ namespace Gabinet
         /// </summary>
         private void PatientT_Click(object sender, RoutedEventArgs e)
         {
+            this.NameSurname.Clear();
+            this.PassInput.Clear();
+            this.Adress.Clear();
+
             this.SpecjalizationText.Visibility = Visibility.Hidden;
             this.SpecjalizationDropDown.Visibility = Visibility.Hidden;
             this.PermissionNumberT.Visibility = Visibility.Hidden;
@@ -80,6 +98,7 @@ namespace Gabinet
         {
             string addName = this.NameSurname.Text;
             string addAdres = this.Adress.Text;
+            string password = this.PassInput.Text;
 
             try
             {
@@ -94,7 +113,7 @@ namespace Gabinet
                     var addSpecjalization = this.SpecjalizationDropDown.SelectedValue.ToString();
                     long addSpecjalization2 = long.Parse(addSpecjalization);
                     string addPermission = this.PermissionNumber.Text;
-                    this.Context.Add(new ProjektZaliczeniowy.Doctor { NameSurname = addName, Adress = addAdres, PermissionNumber = addPermission, RoleId = addRole2, SpecializationId = addSpecjalization2 });
+                    this.Context.Add(new ProjektZaliczeniowy.Doctor { NameSurname = addName, Adress = addAdres, PermissionNumber = addPermission, RoleId = addRole2, SpecializationId = addSpecjalization2, Password = password });
                 }
                 /// <summary>
                 /// Dodanie usera -patient do bazy danych
@@ -103,7 +122,7 @@ namespace Gabinet
                 {
                     string addPesel = this.Pesel.Text;
                     long addPesel2 = long.Parse(addPesel);
-                    this.Context.Add(new ProjektZaliczeniowy.Patient { Name = addName, Adress = addAdres, Pesel = addPesel2, RoleId = 2 });
+                    this.Context.Add(new ProjektZaliczeniowy.Patient { Name = addName, Adress = addAdres, Pesel = addPesel2, RoleId = 2, Password = password });
                 }
                 /// <summary>
                 /// Dodanie usera -nurse do bazy danych
@@ -113,7 +132,7 @@ namespace Gabinet
                     var addRole = RoleComboBox.SelectedValue.ToString();
                     long addRole2 = long.Parse(addRole);
                     string addPermission = this.PermissionNumber.Text;
-                    this.Context.Add(new ProjektZaliczeniowy.Nurse { NameSurname = addName, Adress = addAdres, PermissionNumber = addPermission, RoleId = addRole2 });
+                    this.Context.Add(new ProjektZaliczeniowy.Nurse { NameSurname = addName, Adress = addAdres, PermissionNumber = addPermission, RoleId = addRole2, Password = password });
                 }
 
                 Context.SaveChanges();

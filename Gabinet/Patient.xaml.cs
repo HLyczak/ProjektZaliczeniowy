@@ -28,11 +28,15 @@ namespace Gabinet
             InitializeComponent();
             this.Context = context;
             this.CurrentPatient = patient;
+
+            var patientVisits = this.Context.Grafik.Where(u => u.PatientId == CurrentPatient.Id);
+            var dateList = patientVisits.Select(v => v.Data.ToString("yyyy-MM-dd")).Distinct().ToList();
+            Date1.ItemsSource = dateList;
         }
 
         private void Show_grafik_Click(object sender, RoutedEventArgs e)
         {
-            var data = this.Date.Text;
+            var data = this.Date1.Text;
             var datasq = this.Context.Grafik.Where(u => u.Data.ToString().Contains(data) && u.PatientId == CurrentPatient.Id);
             var patientid = datasq.Select(u => new RowGrafik { Doctor_Name = u.Doctor.NameSurname, Room_Number = u.Room.Number, Grafik_Id = u.Id, Name_Patient = u.Patient.Name }).ToList();
             datagrid.ItemsSource = patientid;
@@ -49,7 +53,7 @@ namespace Gabinet
             this.Context.Grafik.Remove(delete);
             Context.SaveChanges();
 
-            var data = this.Date.Text;
+            var data = this.Date1.Text;
             var datasq = this.Context.Grafik.Where(u => u.Data.ToString().Contains(data) && u.PatientId == CurrentPatient.Id);
             var patientid = datasq.Select(u => new RowGrafik { Doctor_Name = u.Doctor.NameSurname, Room_Number = u.Room.Number, Grafik_Id = u.Id, Name_Patient = u.Patient.Name }).ToList();
             datagrid.ItemsSource = patientid;
@@ -60,6 +64,10 @@ namespace Gabinet
             Gabinet.MainWindow main = new Gabinet.MainWindow(this.Context);
             this.Visibility = Visibility.Hidden;
             main.Show();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
         }
     }
 }

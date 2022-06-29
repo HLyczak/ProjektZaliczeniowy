@@ -40,8 +40,20 @@ namespace Gabinet
         /// </summary>
         private void show_Click(object sender, RoutedEventArgs e)
         {
-            var data = this.dataNurse.Text;
-            var datasq = this.Context.Grafik.Where(u => u.Data.ToString().Contains(data));
+            if (!dataNurse1.SelectedDate.HasValue)
+            {
+                MessageBox.Show("No data", "Caution", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            var data = this.dataNurse1.SelectedDate.Value.Date;
+            var datasq = this.Context.Grafik.Where(u => u.Data == data);
+
+            if (datasq.Count() == 0)
+            {
+                MessageBox.Show("No data", "Caution", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
             var patientid = datasq.Select(u => new RowGrafik { Doctor_Name = u.Doctor.NameSurname, Room_Number = u.Room.Number, Grafik_Id = u.Id, Name_Patient = u.Patient.Name }).ToList();
             datagrid.ItemsSource = patientid;
         }
@@ -57,8 +69,8 @@ namespace Gabinet
             this.Context.Grafik.Remove(delete);
             Context.SaveChanges();
 
-            var data = this.dataNurse.Text;
-            var datasq = this.Context.Grafik.Where(u => u.Data.ToString().Contains(data));
+            var data = this.dataNurse1.SelectedDate.Value.Date;
+            var datasq = this.Context.Grafik.Where(u => u.Data == data);
             var patientid = datasq.Select(u => new RowGrafik { Doctor_Name = u.Doctor.NameSurname, Room_Number = u.Room.Number, Grafik_Id = u.Id, Name_Patient = u.Patient.Name }).ToList();
             datagrid.ItemsSource = patientid;
         }

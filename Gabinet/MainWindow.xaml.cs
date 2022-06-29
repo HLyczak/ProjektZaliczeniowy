@@ -50,7 +50,7 @@ namespace Gabinet
                 }
                 else
                 {
-                    MessageBox.Show("Corect the data", "Wrong data", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Invalid data", "Wrong data", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
 
@@ -66,7 +66,7 @@ namespace Gabinet
                 }
                 else
                 {
-                    MessageBox.Show("Incorect data", "Wrong data", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Invalid data", "Wrong data", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
 
