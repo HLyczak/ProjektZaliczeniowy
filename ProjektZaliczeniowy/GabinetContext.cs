@@ -13,13 +13,14 @@ namespace ProjektZaliczeniowy
     {
         public GabinetContext() : base()
         {
-            Database.EnsureDeleted();
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(@"Data Source=DESKTOP-4E1085R;Initial Catalog=gabinet;Integrated Security=True");
+            //options.UseSqlServer(@"Data Source=DESKTOP-4E1085R;Initial Catalog=gabinet;Integrated Security=True");
+            options.UseSqlServer("Initial Catalog=gabinet;Integrated Security=True");
         }
 
         public DbSet<Doctor> Doctor { get; set; }

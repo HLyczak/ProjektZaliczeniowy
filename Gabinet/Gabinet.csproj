@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="heart-rate-g6494239ee_640.png" />
     <None Remove="image.png" />
+    <None Remove="Zrzut ekranu 2022-06-28 233223.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="heart-rate-g6494239ee_640.png" />
     <Resource Include="image.png" />
+    <Resource Include="Zrzut ekranu 2022-06-28 233223.png" />
   </ItemGroup>
 
 </Project>

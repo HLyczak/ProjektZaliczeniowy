@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Gabinet"
 
         mc:Ignorable="d"
-        Title="MainWindow" Height="598" Width="649" FontFamily="Segoe UI Emoji" Icon="/Zrzut ekranu 2022-06-28 233223.png">
+        Title="MainWindow" Height="598" Width="649" FontFamily="Segoe UI Emoji" Icon="/heart-rate-g6494239ee_640.png">
     <Window.Background>
         <ImageBrush ImageSource="/image.png" Stretch="None" TileMode="Tile" />
     </Window.Background>
