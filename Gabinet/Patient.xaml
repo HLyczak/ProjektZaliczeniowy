@@ -11,7 +11,7 @@
             <ImageBrush ImageSource="/image.png" />
         </Grid.Background>
         <TextBlock x:Name="LogOutP" HorizontalAlignment="Left" Height="29" Margin="562,21,0,0" Text="Log Out" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" MouseLeftButtonDown="LogOutP_MouseLeftButtonDown" />
-        <Button x:Name="Show_grafik" Content="Show Schedule" HorizontalAlignment="Left" Height="38" Margin="17,146,0,0" VerticalAlignment="Top" Width="163" Click="Show_grafik_Click" FontFamily="Lucida Sans" Background="{x:Null}" />
+        <Button x:Name="Show_grafik" Content="Show Schedule" HorizontalAlignment="Left" Height="38" Margin="17,146,0,0" VerticalAlignment="Top" Width="163" Click="Show_grafik_Click" FontFamily="Lucida Sans" Background="{x:Null}" BorderBrush="#FF7BA69C" />
         <DataGrid x:Name="datagrid" CanUserAddRows="False" HorizontalAlignment="Left" Height="340" Margin="23,199,0,0" VerticalAlignment="Top" Width="599" HorizontalGridLinesBrush="#FFD13F3F" BorderBrush="#FFFAFDFF" Background="#7FFFFEFE" FontFamily="Lucida Sans">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Delete">
@@ -23,8 +23,8 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox x:Name="Date1" HorizontalAlignment="Left" Height="38" Margin="114,85,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.474,1.527" />
+        <ComboBox x:Name="Date1" HorizontalAlignment="Left" Height="38" Margin="114,85,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.474,1.527" BorderBrush="#FF7BA69C" />
         <TextBox HorizontalAlignment="Left" Height="31" Margin="-13,97,0,0" Text="Select data: " TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontFamily="Lucida Sans" Background="{x:Null}" TextAlignment="Center" BorderBrush="{x:Null}" />
-        <TextBox HorizontalAlignment="Left" Height="31" Margin="-14,22,0,0" Text="Patient view" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontFamily="Lucida Sans" Background="{x:Null}" TextAlignment="Center" BorderBrush="{x:Null}" FontSize="16" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Left" Height="31" Margin="-14,22,0,0" Text="Patient`s view" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontFamily="Lucida Sans" Background="{x:Null}" TextAlignment="Center" BorderBrush="{x:Null}" FontSize="16" TextChanged="TextBox_TextChanged" />
     </Grid>
 </Window>
